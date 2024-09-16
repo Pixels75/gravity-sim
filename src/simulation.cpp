@@ -33,6 +33,9 @@ void Simulation::Update() {}
 void Simulation::Render() {
   BeginDrawing();
   ClearBackground( m_window.bg_color );
+  for ( auto& obj : m_objects ) {
+    obj.Render();
+  }
   EndDrawing();
 }
 

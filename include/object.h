@@ -1,21 +1,19 @@
 #pragma once
 
-#include <string>
-
 #include "raylib.h"
 
 class Object {
 public:
-  std::string name;
+  const char* name;
   Vector2 position;
   Vector2 velocity;
   Color color;
   float mass;
   float radius;
 
-  explicit Object( std::string name );
+  explicit Object( const char* name );
 
-  Object( const std::string& name, Vector2 position,
+  Object( const char* name, Vector2 position,
           Vector2 velocity,        Color color,
           float radius,            float mass );
 
@@ -24,4 +22,6 @@ public:
   void AddVelocity( Vector2 velocityDelta );
 
   void ApplyForce( Vector2 force );
+
+  void Render() const;
 };
